@@ -1,0 +1,31 @@
+{
+  "name": "practice_restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksei24/practice_restAPI.git"
+  },
+  "keywords": [
+    "javascripr",
+    "js",
+    "node.js",
+    "express",
+    "api",
+    "rest_API"
+  ],
+  "author": "Alexey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksei24/practice_restAPI/issues"
+  },
+  "homepage": "https://github.com/aleksei24/practice_restAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
