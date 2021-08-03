@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const appSchema = new mongoose.Schema({
     name: {
@@ -15,5 +16,8 @@ const appSchema = new mongoose.Schema({
 
 const appTask = mongoose.model('Task', appSchema);
 
-exports = appTask;
+// exports.appTask = appTask;
+// module.exports.appTask = appTask;
 // module.exports = appTask;
+
+export default appTask;
