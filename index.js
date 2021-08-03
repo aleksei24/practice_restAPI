@@ -6,7 +6,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-import appTask from './models/app.js';
+import { appTask } from './models/app.js';
+
+dotenv.config();
 
 console.log(appTask);
 
