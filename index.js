@@ -1,15 +1,22 @@
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const appTask = require('./models/app');
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const appTask = require('./models/app');
 
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+import appTask from './models/app.js';
+
+console.log(appTask);
+
+// require('dotenv').config();
+
+const app = express();
 
 app.get('/', (req, res) => {
     res.send('The project has been launched');
 });
-
-console.log(appTask);
 
 const connect_str = process.env.CONNECTION;
 const port = process.env.PORT || 5000;
