@@ -14,10 +14,10 @@ const appSchema = new mongoose.Schema({
     date: { type: Date, default: new Date() },
 });
 
-const appTask = mongoose.model('Task', appSchema);
+export const appTask = mongoose.model('Task', appSchema);
 
 // exports.appTask = appTask;
 // module.exports.appTask = appTask;
 // module.exports = appTask;
 
-export default appTask;
+// export default appTask;
