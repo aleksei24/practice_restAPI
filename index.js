@@ -1,5 +1,7 @@
+const router = require('./routes/router');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // import express from 'express';
 // import mongoose from 'mongoose';
@@ -14,6 +16,11 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/practice_restAPI', router);
 
 app.get('/', (req, res) => {
     res.send('The project has been launched');
