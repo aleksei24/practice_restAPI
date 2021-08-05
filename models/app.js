@@ -14,7 +14,7 @@ const appSchema = new mongoose.Schema({
     date: { type: Date, default: new Date() },
 });
 
-export const appTask = mongoose.model('Task', appSchema);
+const appTask = mongoose.model('Task', appSchema);
 
 exports.appTask = appTask;
 // module.exports.appTask = appTask;
