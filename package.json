@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/aleksei24/practice_restAPI#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.5",
