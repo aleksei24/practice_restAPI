@@ -8,7 +8,7 @@ const appSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 150,
     },
-    author: String,
+    author: { type: String, minlength: 3, maxlength: 30 },
     uid: String,
     isComplete: Boolean,
     date: { type: Date, default: new Date() },
