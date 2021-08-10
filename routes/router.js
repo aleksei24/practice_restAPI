@@ -58,16 +58,18 @@ router.put('/:id', async (req, res) => {
     });
 
     const { error } = schema.validate(req.body);
+
     if (error) {
         return res.status(400).send(error.details[0].message);
     }
 
-    const putTask = await appTask.findById(req.params.id);
-    if (!putTask) {
-        return res.status(404).send('Put task is not found');
-    }
-    const { name, author, isComplete, date, uid } = req.body;
     try {
+        const putTask = await appTask.findById(req.params.id);
+        if (!putTask) {
+            return res.status(404).send('Put task is not found');
+        }
+        const { name, author, isComplete, date, uid } = req.body;
+
         const updatedTasks = await appTask.findByIdAndUpdate(
             req.params.id,
             {
@@ -87,12 +89,12 @@ router.put('/:id', async (req, res) => {
 });
 
 router.patch('/:id', async (req, res) => {
-    const taskPatch = await appTask.findById(req.params.id);
-    if (!taskPatch) {
-        return res.status(404).send('Patch task is not found');
-    }
-
     try {
+        const taskPatch = await appTask.findById(req.params.id);
+        if (!taskPatch) {
+            return res.status(404).send('Patch task is not found');
+        }
+
         const updatedTasks = await appTask.findByIdAndUpdate(req.params.id, {
             isComplete: !taskPatch.isComplete,
         });
@@ -104,12 +106,12 @@ router.patch('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    const taskDelete = await appTask.findById(req.params.id);
-    if (!taskDelete) {
-        return res.status(404).send('Delete task is not found');
-    }
-
     try {
+        const taskDelete = await appTask.findById(req.params.id);
+        if (!taskDelete) {
+            return res.status(404).send('Delete task is not found');
+        }
+
         // delete one
         /*const taskDelete = await appTask.deleteOne({ isComplete: true });
         res.send(taskDelete);*/
