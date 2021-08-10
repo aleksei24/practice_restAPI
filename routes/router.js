@@ -86,7 +86,29 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+router.patch('/:id', async (req, res) => {
+    const taskPatch = await appTask.findById(req.params.id);
+    if (!taskPatch) {
+        return res.status(404).send('Patch task is not found');
+    }
+
+    try {
+        const updatedTasks = await appTask.findByIdAndUpdate(req.params.id, {
+            isComplete: !taskPatch.isComplete,
+        });
+        res.send(updatedTasks);
+    } catch (error) {
+        res.status(500).send(error.message);
+        console.log(error.message);
+    }
+});
+
 router.delete('/:id', async (req, res) => {
+    const taskDelete = await appTask.findById(req.params.id);
+    if (!taskDelete) {
+        return res.status(404).send('Delete task is not found');
+    }
+
     try {
         // delete one
         /*const taskDelete = await appTask.deleteOne({ isComplete: true });
